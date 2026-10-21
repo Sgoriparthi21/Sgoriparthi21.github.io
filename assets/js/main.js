@@ -165,27 +165,33 @@ async function loadEducation() {
 
         const list = document.getElementById('education-list');
         const degrees = education.education || [];
-        const certifications = education.certifications || [];
-
         if (list) {
             list.innerHTML = degrees.map(item => `
                 <div class="work-item">
                     <div class="work-period">${item.period || ''}</div>
                     <div class="work-details">
                         <h3 class="work-title">${item.degree || ''}</h3>
-                        <div class="work-company">${item.institution || ''}${item.location ? ` · ${item.location}` : ''}</div>
+                        <div class="work-company">${item.institution || ''}</div>
                         ${item.description ? `<p class="work-description">${item.description}</p>` : ''}
                     </div>
                 </div>
-            `).join('') + (certifications.length > 0 ? `
-                <div class="work-item">
-                    <div class="work-period">Certifications</div>
-                    <div class="work-details">
-                        <h3 class="work-title">Professional Certifications</h3>
-                        <p class="work-description">${certifications.map(c => c.name).join(' · ')}</p>
-                    </div>
+            `).join('');
+        }
+
+        const certTitle = document.getElementById('certifications-title');
+        if (certTitle) certTitle.textContent = education.certificationsTitle || 'Certifications';
+
+        const certList = document.getElementById('certifications-list');
+        const certifications = education.certifications || [];
+        if (certList) {
+            certList.innerHTML = certifications.map(cert => `
+                <div class="skill-category">
+                    <h3>${cert.name}</h3>
+                    <ul class="skill-list">
+                        <li>${cert.issuer || 'Professional Certification'}</li>
+                    </ul>
                 </div>
-            ` : '');
+            `).join('');
         }
     }
 }
