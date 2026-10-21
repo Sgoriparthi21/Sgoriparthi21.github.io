@@ -5,12 +5,14 @@
       "degree": "Master of Science in Data Science",
       "institution": "Lewis University",
       "period": "Aug 2023 — May 2025",
-      "description": "Graduate study in data science, with a focus on data modeling, data warehousing and database administration."
+      "description": "Graduate study in data science, with a focus on data modeling, data warehousing and database administration.",
+      "logo": "assets/images/logos/lewis-university.png"
     },
     {
       "degree": "Bachelor of Technology in Information Technology",
       "institution": "Jawaharlal Nehru Technological University Kakinada (JNTUK)",
-      "period": "Jun 2017 — May 2021"
+      "period": "Jun 2017 — May 2021",
+      "logo": "assets/images/logos/jntuk.png"
     }
   ],
   "certifications": [

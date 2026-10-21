@@ -144,7 +144,10 @@ async function loadExperience() {
         if (list && experiences.length > 0) {
             list.innerHTML = experiences.map(item => `
                 <div class="work-item">
-                    <div class="work-period">${item.period || ''}</div>
+                    <div class="work-period">
+                        ${item.logo ? `<img class="work-logo" src="${item.logo}" alt="${item.company || ''} logo">` : ''}
+                        ${item.period || ''}
+                    </div>
                     <div class="work-details">
                         <h3 class="work-title">${item.title || item.position || ''}</h3>
                         <div class="work-company">${item.company || ''}</div>
@@ -168,7 +171,10 @@ async function loadEducation() {
         if (list) {
             list.innerHTML = degrees.map(item => `
                 <div class="work-item">
-                    <div class="work-period">${item.period || ''}</div>
+                    <div class="work-period">
+                        ${item.logo ? `<img class="work-logo" src="${item.logo}" alt="${item.institution || ''} logo">` : ''}
+                        ${item.period || ''}
+                    </div>
                     <div class="work-details">
                         <h3 class="work-title">${item.degree || ''}</h3>
                         <div class="work-company">${item.institution || ''}</div>
