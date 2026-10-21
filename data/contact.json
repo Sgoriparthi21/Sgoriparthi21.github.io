@@ -1,0 +1,21 @@
+{
+  "title": "Let's Connect",
+  "description": "I'm open to data engineering and machine learning engineering roles. Feel free to reach out.",
+  "methods": [
+    {
+      "label": "Email",
+      "value": "goriparthisaiteja@gmail.com",
+      "link": "mailto:goriparthisaiteja@gmail.com"
+    },
+    {
+      "label": "Phone",
+      "value": "+1 (779) 445-4934",
+      "link": "tel:+17794454934"
+    },
+    {
+      "label": "GitHub",
+      "value": "github.com/Sgoriparthi21",
+      "link": "https://github.com/Sgoriparthi21"
+    }
+  ]
+}

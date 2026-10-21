@@ -1,0 +1,11 @@
+{
+  "sectionTitle": "Professional Experience",
+  "experiences": [
+    {
+      "title": "Machine Learning Engineer",
+      "company": "Genpact India Pvt Ltd. · Bangalore, India",
+      "period": "Jul 2021 — Aug 2023",
+      "description": "Led proofs of concept and built ML predictive models through to deployment. Handled data preparation, feature engineering, cross-validation, hyperparameter tuning and AWS Glue, cutting an algorithm's run time from 3 minutes to 1. Optimized GPU utilization for CatBoost and XGBoost training by 22%, and raised a Random Forest classifier's accuracy on a large real-time racing dataset from 78% to 86% with Bayesian Optimization. Ran code reviews and end-to-end testing, and automated model deployment on virtual machine servers."
+    }
+  ]
+}

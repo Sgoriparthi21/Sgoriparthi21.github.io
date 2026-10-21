@@ -1,0 +1,71 @@
+{
+  "title": "Skills & Expertise",
+  "categories": [
+    {
+      "name": "Data Engineering",
+      "skills": [
+        "ETL & Data Pipelines",
+        "AWS S3, Glue & EMR",
+        "Hadoop",
+        "Snowflake",
+        "Data Warehousing",
+        "Data Modelling"
+      ]
+    },
+    {
+      "name": "Databases",
+      "skills": [
+        "MySQL",
+        "PostgreSQL",
+        "SQL Server",
+        "Redshift",
+        "Oracle",
+        "NoSQL & Graph Databases"
+      ]
+    },
+    {
+      "name": "Machine Learning",
+      "skills": [
+        "Supervised & Unsupervised Learning",
+        "Deep Learning (TensorFlow)",
+        "XGBoost & CatBoost",
+        "Random Forest",
+        "NLP",
+        "Anomaly Detection"
+      ]
+    },
+    {
+      "name": "Languages",
+      "skills": [
+        "Python (Pandas, NumPy, Scikit-learn)",
+        "SQL",
+        "R",
+        "SAS",
+        "Go & Java",
+        "C & C#"
+      ]
+    },
+    {
+      "name": "Analytics & Visualization",
+      "skills": [
+        "Tableau",
+        "Power BI",
+        "MS Excel",
+        "Matplotlib",
+        "Exploratory Data Analysis",
+        "Hypothesis Testing"
+      ]
+    },
+    {
+      "name": "Engineering Practice",
+      "skills": [
+        "Model Deployment",
+        "End-to-End Testing",
+        "Code Reviews",
+        "Process Automation",
+        "JIRA",
+        "Microsoft Project"
+      ]
+    }
+  ]
+}

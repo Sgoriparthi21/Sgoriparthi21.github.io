@@ -1,0 +1,20 @@
+{
+  "greeting": "Hi, I'm",
+  "name": "Sai Teja Goriparthi",
+  "title": "Data Engineer · Machine Learning Engineer",
+  "summary": "I turn raw data into reliable pipelines and production ML models, with Python, SQL, AWS and Snowflake.",
+  "cta": {
+    "buttons": [
+      {
+        "text": "View Projects",
+        "href": "#projects",
+        "type": "primary"
+      },
+      {
+        "text": "Get in Touch",
+        "href": "#contact",
+        "type": "secondary"
+      }
+    ]
+  }
+}

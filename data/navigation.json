@@ -1,0 +1,25 @@
+{
+  "logo": "STG",
+  "items": [
+    {
+      "text": "About",
+      "href": "#about"
+    },
+    {
+      "text": "Work",
+      "href": "#work"
+    },
+    {
+      "text": "Skills",
+      "href": "#skills"
+    },
+    {
+      "text": "Projects",
+      "href": "#projects"
+    },
+    {
+      "text": "Contact",
+      "href": "#contact"
+    }
+  ]
+}

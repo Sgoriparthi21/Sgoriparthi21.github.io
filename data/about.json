@@ -1,0 +1,26 @@
+{
+  "title": "About Me",
+  "description": [
+    "I'm a Data Engineer with 2+ years of experience and a strong foundation in data analysis and machine learning. I hold a Master of Science in Data Science from Lewis University (May 2025).",
+    "As a Machine Learning Engineer at Genpact, I took business problems from proof of concept to production: data preparation, feature engineering, model training and tuning, AWS Glue pipelines and deployment. I cut an algorithm's run time from 3 minutes to 1, improved GPU utilization for model training by 22%, and raised a Random Forest classifier's accuracy from 78% to 86% with Bayesian Optimization.",
+    "Certifications: Google Certified Data Analyst, Machine Learning with Python, SAS Essentials and SQL for Data Science."
+  ],
+  "stats": [
+    {
+      "number": "2+",
+      "label": "Years Experience"
+    },
+    {
+      "number": "22%",
+      "label": "Better GPU Utilization"
+    },
+    {
+      "number": "78→86%",
+      "label": "Model Accuracy"
+    },
+    {
+      "number": "4",
+      "label": "Certifications"
+    }
+  ]
+}

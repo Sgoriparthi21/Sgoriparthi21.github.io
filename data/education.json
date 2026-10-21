@@ -1,0 +1,24 @@
+{
+  "sectionTitle": "Education & Certifications",
+  "education": [
+    {
+      "degree": "Master of Science in Data Science",
+      "institution": "Lewis University",
+      "period": "May 2025"
+    }
+  ],
+  "certifications": [
+    {
+      "name": "Google Certified Data Analyst"
+    },
+    {
+      "name": "Machine Learning with Python"
+    },
+    {
+      "name": "SAS Essentials"
+    },
+    {
+      "name": "SQL for Data Science"
+    }
+  ]
+}
