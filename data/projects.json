@@ -2,6 +2,29 @@
   "title": "Selected Projects",
   "items": [
     {
+      "title": "Fraud Detection in Python",
+      "description": "Classifies 594K+ synthetic BankSim payments as fraudulent or legitimate, comparing Naive Bayes, Logistic Regression, a Neural Network, Decision Tree and Random Forest on precision, recall and false positives.",
+      "image": "https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=600&h=400&fit=crop",
+      "tags": [
+        "Python",
+        "Pandas",
+        "Scikit-learn",
+        "Jupyter"
+      ],
+      "link": "https://github.com/Sgoriparthi21/fraud-detection-in-python"
+    },
+    {
+      "title": "Text Analysis with NLP",
+      "description": "Interactive Streamlit app for text preprocessing, sentiment analysis, named entity recognition, part-of-speech tagging and word clouds.",
+      "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop",
+      "tags": [
+        "Python",
+        "NLP",
+        "Streamlit"
+      ],
+      "link": "https://github.com/Sgoriparthi21/text-analysis-using-nlp-streamlit"
+    },
+    {
       "title": "StreamLedger",
       "description": "Event-sourced, CQRS ledger for balances and inventory. Optimistic concurrency stops double-spends, and dedupe keys make retried commands safe. 48+ tests run fully in memory.",
       "image": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=600&h=400&fit=crop",
@@ -38,15 +61,66 @@
       "link": "https://github.com/Sgoriparthi21/sentinel-triage"
     },
     {
-      "title": "Text Analysis with NLP",
-      "description": "Interactive Streamlit app for text preprocessing, sentiment analysis, named entity recognition, part-of-speech tagging and word clouds.",
-      "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop",
+      "title": "AI-SOC",
+      "description": "Local research SOC with Wazuh-format ingestion, flow classification, local Ollama triage with retrieved security knowledge, incident correlation, analyst review, Sigma rule export and role-based accounts.",
+      "image": "https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=600&h=400&fit=crop",
       "tags": [
         "Python",
-        "NLP",
-        "Streamlit"
+        "Ollama",
+        "RAG",
+        "Docker",
+        "PostgreSQL"
       ],
-      "link": "https://github.com/Sgoriparthi21/text-analysis-using-nlp-streamlit"
+      "link": "https://github.com/Sgoriparthi21/ai_soc"
+    },
+    {
+      "title": "InfoHunter",
+      "description": "Python OSINT toolkit for usernames, email addresses and domains, with a CLI, a local Streamlit dashboard and PDF reports. Built for authorized investigations only.",
+      "image": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=600&h=400&fit=crop",
+      "tags": [
+        "Python",
+        "Streamlit",
+        "OSINT",
+        "CLI"
+      ],
+      "link": "https://github.com/Sgoriparthi21/infohunter"
+    },
+    {
+      "title": "Conversa — Real-Time Chat",
+      "description": "Full-stack MERN chat app with Socket.IO messaging, a Google Gemini AI chatbot, image sharing via AWS S3, email verification and a responsive dark/light UI.",
+      "image": "https://images.unsplash.com/photo-1563986768609-322da13575f3?w=600&h=400&fit=crop",
+      "tags": [
+        "TypeScript",
+        "React",
+        "Node.js",
+        "MongoDB",
+        "Socket.IO"
+      ],
+      "link": "https://github.com/Sgoriparthi21/mern-chat-app"
+    },
+    {
+      "title": "CIS Compliance Config Rule",
+      "description": "Custom AWS Config rule backed by Lambda that runs Chef InSpec CIS benchmark audits through Systems Manager, so instance OS compliance is monitored continuously.",
+      "image": "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=600&h=400&fit=crop",
+      "tags": [
+        "Python",
+        "AWS Lambda",
+        "AWS Config",
+        "Chef InSpec"
+      ],
+      "link": "https://github.com/Sgoriparthi21/config-rule-inspec-cis-audit-lambda"
+    },
+    {
+      "title": "Asset Management & Compliance Dashboard",
+      "description": "Centralized dashboard for security assessment, CIS benchmark compliance checks and data loss prevention across Ubuntu and Windows machines provisioned with Vagrant.",
+      "image": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop",
+      "tags": [
+        "Node.js",
+        "JavaScript",
+        "Vagrant",
+        "CIS Benchmarks"
+      ],
+      "link": "https://github.com/Sgoriparthi21/centralized-asset-management-system-with-compliance-self-audit-dashboard"
     }
   ]
 }
