@@ -156,12 +156,38 @@ async function loadExperience() {
     }
 }
 
-// Load education section (NEW - standardized)
+// Load education section
 async function loadEducation() {
     const education = await loadJSON('education');
-    // Minimalist template doesn't display education by default
-    // But it's available if needed for data generation
-    console.log('Education data loaded (not displayed in this template):', education);
+    if (education) {
+        const title = document.getElementById('education-title');
+        if (title) title.textContent = education.sectionTitle || 'Education';
+
+        const list = document.getElementById('education-list');
+        const degrees = education.education || [];
+        const certifications = education.certifications || [];
+
+        if (list) {
+            list.innerHTML = degrees.map(item => `
+                <div class="work-item">
+                    <div class="work-period">${item.period || ''}</div>
+                    <div class="work-details">
+                        <h3 class="work-title">${item.degree || ''}</h3>
+                        <div class="work-company">${item.institution || ''}${item.location ? ` · ${item.location}` : ''}</div>
+                        ${item.description ? `<p class="work-description">${item.description}</p>` : ''}
+                    </div>
+                </div>
+            `).join('') + (certifications.length > 0 ? `
+                <div class="work-item">
+                    <div class="work-period">Certifications</div>
+                    <div class="work-details">
+                        <h3 class="work-title">Professional Certifications</h3>
+                        <p class="work-description">${certifications.map(c => c.name).join(' · ')}</p>
+                    </div>
+                </div>
+            ` : '');
+        }
+    }
 }
 
 // Load skills
