@@ -16,5 +16,37 @@
         "type": "secondary"
       }
     ]
-  }
+  },
+  "image": "assets/images/sai-teja.jpg",
+  "rolesPrefix": "I build",
+  "roles": [
+    "scalable data pipelines",
+    "production ML models",
+    "cloud data warehouses",
+    "insights that drive decisions"
+  ],
+  "chips": [
+    "Python",
+    "AWS",
+    "Snowflake",
+    "Machine Learning"
+  ],
+  "status": "Open to opportunities",
+  "socialLinks": [
+    {
+      "platform": "GitHub",
+      "url": "https://github.com/Sgoriparthi21",
+      "icon": "github"
+    },
+    {
+      "platform": "Email",
+      "url": "mailto:goriparthisaiteja@gmail.com",
+      "icon": "email"
+    },
+    {
+      "platform": "Phone",
+      "url": "tel:+17794454934",
+      "icon": "phone"
+    }
+  ]
 }

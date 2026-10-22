@@ -9,8 +9,11 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/enhancements.css">
 </head>
 <body>
+    <div class="scroll-progress" id="scroll-progress" aria-hidden="true"></div>
+
     <!-- Navigation -->
     <nav class="nav" id="nav">
         <div class="nav-container">
@@ -26,12 +29,24 @@
 
     <!-- Hero Section -->
     <section class="hero" id="hero">
+        <span class="hero-blob b1" aria-hidden="true"></span>
+        <span class="hero-blob b2" aria-hidden="true"></span>
+        <span class="hero-blob b3" aria-hidden="true"></span>
         <div class="container">
             <div class="hero-content">
                 <p class="hero-label" id="hero-label"></p>
                 <h1 class="hero-title" id="hero-title"></h1>
                 <p class="hero-subtitle" id="hero-subtitle"></p>
+                <p class="hero-roles" id="hero-roles"></p>
                 <div class="hero-cta" id="hero-cta"></div>
+                <div class="hero-social" id="hero-social"></div>
+            </div>
+            <div class="hero-image-wrapper">
+                <div class="hero-photo">
+                    <div class="hero-image" id="hero-image"></div>
+                </div>
+                <div id="hero-chips"></div>
+                <div class="hero-status" id="hero-status" hidden><span class="dot"></span><span id="hero-status-text"></span></div>
             </div>
         </div>
     </section>

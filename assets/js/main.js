@@ -31,6 +31,53 @@ async function initSite() {
     ]);
 
     initMobileNav();
+    initEnhancements();
+}
+
+// Scroll progress, nav state, active links and reveal-on-scroll
+function initEnhancements() {
+    const nav = document.getElementById('nav');
+    const progress = document.getElementById('scroll-progress');
+    const onScroll = () => {
+        const max = document.documentElement.scrollHeight - window.innerHeight;
+        if (progress) progress.style.width = `${max > 0 ? (window.scrollY / max) * 100 : 0}%`;
+        if (nav) nav.classList.toggle('scrolled', window.scrollY > 10);
+    };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+
+    if (!('IntersectionObserver' in window)) return;
+
+    const links = [...document.querySelectorAll('.nav-menu a[href^="#"]')];
+    const sectionObserver = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (!entry.isIntersecting) return;
+            links.forEach(a => a.classList.toggle('active', a.getAttribute('href') === `#${entry.target.id}`));
+        });
+    }, { rootMargin: '-45% 0px -50% 0px' });
+    document.querySelectorAll('section[id]').forEach(s => sectionObserver.observe(s));
+
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+    const targets = document.querySelectorAll(
+        '.section-header, .about-text, .stat-item, .work-item, .skill-category, .project-item, .contact-item'
+    );
+    targets.forEach(el => {
+        const siblings = [...el.parentElement.children];
+        el.style.setProperty('--d', `${Math.min(siblings.indexOf(el), 5) * 0.08}s`);
+        el.classList.add('reveal');
+    });
+    document.documentElement.classList.add('js-reveal');
+
+    const revealObserver = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('in');
+                revealObserver.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+    targets.forEach(el => revealObserver.observe(el));
 }
 
 // Load site configuration
@@ -72,7 +119,11 @@ async function loadHero() {
         if (label) label.textContent = greeting;
 
         const titleEl = document.getElementById('hero-title');
-        if (titleEl) titleEl.textContent = name ? `${name}` : title;
+        if (titleEl) {
+            const words = (name || title).trim().split(' ');
+            const last = words.pop();
+            titleEl.innerHTML = `${words.join(' ')} <span class="grad-text">${last}</span>`;
+        }
 
         const subtitle = document.getElementById('hero-subtitle');
         if (subtitle) subtitle.textContent = title && name ? title : summary;
@@ -102,7 +153,64 @@ async function loadHero() {
         if (image && hero.image) {
             image.innerHTML = `<img src="${hero.image}" alt="${name || title}">`;
         }
+
+        const roles = document.getElementById('hero-roles');
+        if (roles && hero.roles && hero.roles.length > 0) {
+            roles.innerHTML = `${hero.rolesPrefix || ''} <span class="typed">${hero.roles[0]}</span><span class="caret"></span>`;
+            startTyping(roles.querySelector('.typed'), hero.roles);
+        }
+
+        const social = document.getElementById('hero-social');
+        if (social && hero.socialLinks) {
+            social.innerHTML = hero.socialLinks.map(link => `
+                <a href="${link.url}" aria-label="${link.platform}" title="${link.platform}"${link.url.startsWith('http') ? ' target="_blank" rel="noopener"' : ''}>
+                    ${SOCIAL_ICONS[link.icon] || link.platform}
+                </a>
+            `).join('');
+        }
+
+        const chips = document.getElementById('hero-chips');
+        if (chips && hero.chips) {
+            chips.innerHTML = hero.chips.slice(0, 4).map((chip, i) => `
+                <span class="hero-chip c${i + 1}"><i></i>${chip}</span>
+            `).join('');
+        }
+
+        const status = document.getElementById('hero-status');
+        if (status && hero.status) {
+            document.getElementById('hero-status-text').textContent = hero.status;
+            status.hidden = false;
+        }
     }
+}
+
+const SOCIAL_ICONS = {
+    github: '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5C5.65.5.5 5.65.5 12a11.5 11.5 0 0 0 7.86 10.92c.58.1.79-.25.79-.56v-2c-3.2.7-3.87-1.37-3.87-1.37-.52-1.33-1.28-1.68-1.28-1.68-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.19 1.76 1.19 1.03 1.76 2.69 1.25 3.35.96.1-.75.4-1.25.73-1.54-2.55-.29-5.24-1.28-5.24-5.68 0-1.26.45-2.28 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.78 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.83 1.19 3.09 0 4.41-2.69 5.39-5.25 5.67.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5Z"/></svg>',
+    email: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>',
+    phone: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2Z"/></svg>'
+};
+
+function startTyping(el, words) {
+    if (!el || words.length < 2 || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    let index = 0;
+    let chars = words[0].length;
+    let deleting = true;
+    const tick = () => {
+        const word = words[index];
+        chars += deleting ? -1 : 1;
+        el.textContent = word.slice(0, chars);
+        let delay = deleting ? 40 : 80;
+        if (!deleting && chars === word.length) {
+            deleting = true;
+            delay = 2200;
+        } else if (deleting && chars === 0) {
+            deleting = false;
+            index = (index + 1) % words.length;
+            delay = 300;
+        }
+        setTimeout(tick, delay);
+    };
+    setTimeout(tick, 2600);
 }
 
 // Load about section
